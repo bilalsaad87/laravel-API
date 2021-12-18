@@ -53,6 +53,18 @@ class CategoryController extends Controller
         return DB::table('categories')->where('id', $id)->get();
     }
 
+    public function categoryParent($parent_id)
+    {
+
+        $query = DB::table('categories')
+                        ->where('Parent_ID', $parent_id)
+                        ->orderBy('id', 'asc')
+                        ->get();
+      
+        
+        return $query;
+    }
+
     /**
      * Update the specified resource in storage.
      *

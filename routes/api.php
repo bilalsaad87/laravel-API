@@ -32,6 +32,7 @@ Route::get('/products/search/{name}', [ProductController::class, 'search']);
 //for category
 Route::get('/category', [CategoryController::class, 'index']);
 Route::get('/category/{id}', [CategoryController::class, 'show']);
+Route::get('/category/parent/{id}', [CategoryController::class, 'categoryParent']);
 
 // Protected Routes
 Route::group(['middleware' => ['auth:sanctum']], function() {
